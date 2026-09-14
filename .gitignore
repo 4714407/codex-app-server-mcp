@@ -1,0 +1,7 @@
+node_modules/
+protocol-schema/
+coverage/
+.env
+test-tmp/
+*.log
+.codex-app-server-mcp/

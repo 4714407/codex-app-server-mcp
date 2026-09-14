@@ -1,0 +1,52 @@
+{
+  "name": "codex-app-server-mcp",
+  "version": "1.0.0",
+  "description": "A secure MCP bridge for asynchronously running and controlling Codex app-server tasks.",
+  "author": "4714407 <4714407@qq.com>",
+  "homepage": "https://github.com/4714407/codex-app-server-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4714407/codex-app-server-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/4714407/codex-app-server-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "codex",
+    "openai",
+    "app-server",
+    "claude-code"
+  ],
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "server.mjs",
+  "bin": {
+    "codex-app-server-mcp": "server.mjs"
+  },
+  "files": [
+    "server.mjs",
+    "lib",
+    "README.md",
+    "README.en.md",
+    "USAGE.md",
+    "USAGE.en.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test test/bridge.test.mjs test/sandbox.test.mjs && node --test --test-name-pattern \"MCP tools|invalid cwd\" test/real.test.mjs",
+    "test:real": "node --test test/real.test.mjs",
+    "test:sandbox-real": "node --test test/sandbox-real.test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.0",
+    "zod": "^3.25.0",
+    "ws": "^8.18.0"
+  }
+}

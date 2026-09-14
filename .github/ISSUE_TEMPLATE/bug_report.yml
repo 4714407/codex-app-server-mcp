@@ -1,0 +1,43 @@
+name: Bug report
+description: Report a reproducible defect without sharing secrets.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include Tokens, API keys, real project paths, prompts, or unredacted logs.
+  - type: input
+    id: version
+    attributes:
+      label: Project version or commit
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: OS, Node.js, and Codex CLI versions
+      placeholder: Windows 11, Node 22.0.0, Codex 0.x
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Connection mode
+      options:
+        - Local app-server
+        - Remote app-server
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Use a minimal, fully redacted example.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
